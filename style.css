@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Palette: #0d1321 ink, #1d2d44 navy, #fefae0 cream, #dda15e tan, #bc6c25 copper */
 :root {
-  --bg: #fefae0;
+  --bg: ##FCFBF4;
   --ink: #0d1321;
   --muted: #4f6078;
   --line: #e8e1b8;
@@ -17,7 +17,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0d1321;
-    --ink: #fefae0;
+    --ink: ##FCFBF4;
     --muted: #9fadc2;
     --line: #24344c;
     --accent: #dda15e;
