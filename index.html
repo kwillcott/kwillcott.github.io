@@ -1,138 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Name</title>
-<meta name="description" content="Academic homepage">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name</title>
+  <meta name="description" content="Academic homepage">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="band">
+  <!-- Ice shelf schematic (direct child of .band, outside .hero) -->
+  <svg class="scene" viewBox="0 0 240 150" aria-hidden="true">
+    <path d="M0,14 C45,18 95,42 150,44 V74 C115,80 80,98 40,112 C28,118 15,126 0,130"/>
+    <path d="M40,112 C100,112 160,110 200,104 S235,98 240,96"/>
+    <path d="M150,52 q7.5,-4 15,0 t15,0 t15,0 t15,0 t15,0 t15,0"/>
+    <path d="M186,52 H206 M212,52 H234"/>
+    <rect x="155" y="44" width="14" height="22" rx="2"/>
+  </svg>
+
   <div class="hero">
     <div>
-      <h1 id="name"></h1>
-      <p class="role" id="title"></p>
-      <p class="affil" id="affiliation"></p>
-      <p class="links" id="links"></p>
+      <h1>Your Name</h1>
+      <p class="role">Your role</p>
+      <p class="affil">Your department, university</p>
+      <p class="links">
+        <a href="mailto:you@example.edu">Email</a>
+        <a href="#">CV</a>
+        <a href="#">Google Scholar</a>
+        <a href="https://github.com/kwillcott">GitHub</a>
+      </p>
     </div>
-    <svg class="grid" viewBox="0 0 120 120" aria-hidden="true">
-      <g id="boxes"></g>
-      <path class="loop" d="M20 100 V60 H60 V20 H100 V60" fill="none"/>
-      <path class="head" d="M95 54 L100 61 L105 54" fill="none"/>
-    </svg>
   </div>
-  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34 C 200 62 440 4 720 30 S 1200 58 1440 20 V60 H0 Z"/></svg>
+
+  <!-- Wavy bottom edge -->
+  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,48H1440V24C1320,4 1200,4 1080,24C960,44 840,44 720,24C600,4 480,4 360,24C240,44 120,44 0,24Z"/>
+  </svg>
 </header>
 
 <main>
-
-  <nav class="tabs" id="tabs" aria-label="Sections">
-    <a href="#about">About</a>
+  <nav class="tabs" aria-label="Sections">
+    <a href="#about" aria-current="page">About</a>
     <a href="#research">Research</a>
     <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
   </nav>
 
-  <section id="about"><h2>About</h2><div id="about-body"></div></section>
-  <section id="research"><h2>Research</h2><div id="research-body"></div></section>
+  <section id="about">
+    <h2>About</h2>
+    <p>A short paragraph about who you are and what you work on.</p>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="item">
+      <h3>Project or paper title</h3>
+      <p>One or two sentences describing it.</p>
+    </div>
+    <div class="item">
+      <h3>Another project</h3>
+      <p>One or two sentences describing it.</p>
+    </div>
+  </section>
+
   <section id="experience">
-    <h2>Experience</h2><div id="experience-body" class="timeline"></div>
-    <h2 class="sub">Education</h2><div id="education-body" class="timeline"></div>
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="row">
+        <span class="dates">2024 – present</span>
+        <strong>Position</strong>
+        <span class="org">Organization</span>
+        <p>What you did there.</p>
+      </div>
+      <div class="row">
+        <span class="dates">2022 – 2024</span>
+        <strong>Position</strong>
+        <span class="org">Organization</span>
+        <p>What you did there.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="row">
+        <span class="dates">2020 – 2024</span>
+        <strong>Degree</strong>
+        <span class="org">University</span>
+      </div>
+    </div>
   </section>
 </main>
 
-<footer><span id="foot"></span></footer>
+<footer>© Your Name</footer>
 
-<script src="content.js"></script>
 <script>
-(function () {
-  var $ = function (id) { return document.getElementById(id); };
-  function el(tag, cls, text) {
-    var e = document.createElement(tag);
-    if (cls) e.className = cls;
-    if (text) e.textContent = text;
-    return e;
-  }
-  function link(label, href) {
-    var a = el("a", "", label);
-    a.href = href;
-    if (/^https?:/.test(href)) { a.target = "_blank"; a.rel = "noopener"; }
-    return a;
-  }
-
-  document.title = SITE.name;
-  $("name").textContent = SITE.name;
-  $("title").textContent = SITE.title;
-  $("affiliation").textContent = SITE.affiliation;
-  $("foot").textContent = "\u00A9 " + new Date().getFullYear() + " " + SITE.name;
-
-  // Link row
-  var L = SITE.links, labels = [
-    ["github", "GitHub"], ["linkedin", "LinkedIn"], ["orcid", "ORCID"],
-    ["scholar", "Google Scholar"], ["cv", "CV"], ["email", "Email"]
-  ];
-  var row = $("links");
-  labels.forEach(function (p) {
-    if (!L[p[0]]) return;
-    var href = p[0] === "email" ? "mailto:" + L.email : L[p[0]];
-    row.appendChild(link(p[1], href));
-  });
-
-  // About
-  SITE.about.forEach(function (t) { $("about-body").appendChild(el("p", "", t)); });
-
-  // Research
-  SITE.research.forEach(function (r) {
-    var d = el("div", "item");
-    d.appendChild(el("h3", "", r.title));
-    d.appendChild(el("p", "", r.text));
-    $("research-body").appendChild(d);
-  });
-
-  // Timelines
-  function timeline(list, target) {
-    list.forEach(function (x) {
-      var d = el("div", "row");
-      d.appendChild(el("span", "dates", x.dates));
-      var b = el("div");
-      b.appendChild(el("strong", "", x.role));
-      b.appendChild(el("span", "org", x.org));
-      if (x.text) b.appendChild(el("p", "", x.text));
-      d.appendChild(b);
-      $(target).appendChild(d);
+  // Highlight the nav link for the section currently in view
+  const links = [...document.querySelectorAll('.tabs a')];
+  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      links.forEach(l => l.removeAttribute('aria-current'));
+      links[sections.indexOf(e.target)].setAttribute('aria-current', 'page');
     });
-  }
-  timeline(SITE.experience, "experience-body");
-  timeline(SITE.education, "education-body");
-
-  // Tabs: show one panel at a time, driven by the URL hash (#about, #research, #experience)
-  var tabs = Array.prototype.slice.call(document.querySelectorAll("#tabs a"));
-  var panels = tabs.map(function (t) { return $(t.getAttribute("href").slice(1)); });
-  function show() {
-    var id = location.hash.slice(1);
-    if (!panels.some(function (p) { return p.id === id; })) id = panels[0].id;
-    panels.forEach(function (p) { p.hidden = p.id !== id; });
-    tabs.forEach(function (t) {
-      var on = t.getAttribute("href") === "#" + id;
-      if (on) t.setAttribute("aria-current", "page"); else t.removeAttribute("aria-current");
-    });
-  }
-  window.addEventListener("hashchange", function () { show(); window.scrollTo(0, 0); });
-  show();
-
-  // Nine-box motif
-  var g = $("boxes"), ns = "http://www.w3.org/2000/svg";
-  for (var r = 0; r < 3; r++) for (var c = 0; c < 3; c++) {
-    var rect = document.createElementNS(ns, "rect");
-    rect.setAttribute("x", 6 + c * 40); rect.setAttribute("y", 6 + r * 40);
-    rect.setAttribute("width", 28); rect.setAttribute("height", 28); rect.setAttribute("rx", 3);
-    g.appendChild(rect);
-  }
-})();
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => s && io.observe(s));
 </script>
 </body>
 </html>
