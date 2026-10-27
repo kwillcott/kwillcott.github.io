@@ -13,11 +13,11 @@ const SITE = {
   // Links shown under your name. Leave one as "" to hide it.
   links: {
     github: "https://github.com/kwillcott",
-    linkedin: "",   // e.g. "https://www.linkedin.com/in/your-handle"
-    orcid: "",      // e.g. "https://orcid.org/0000-0000-0000-0000"
+    linkedin: "https://www.linkedin.com/in/kim-willcott-9292b8207",   // e.g. "www.linkedin.com/in/you"
+    orcid: "https://orcid.org/0009-0006-6736-1697",      // e.g. "orcid.org/0000-0000-0000-0000"
     scholar: "",    // Google Scholar profile URL
     cv: "cv.pdf",   // put your CV file next to index.html with this name
-    email: ""       // e.g. "you@uci.edu"
+    email: "kwillcot@uci.edu"       // e.g. "you@uci.edu"
   },
 
   // Each line in this list becomes one paragraph.
