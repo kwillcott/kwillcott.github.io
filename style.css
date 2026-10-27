@@ -11,6 +11,7 @@
   --band-ink: #fefae0;
   --band-muted: #c9d1dd;
   --ice: #dda15e;
+  --gutter: clamp(1.5rem, 6vw, 5rem);   /* left margin shared by header, nav, content, footer */
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -54,7 +55,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 
 .hero {
   position: relative; z-index: 1;
-  max-width: 46rem; margin: 0 auto; padding: 9rem 1.5rem 5.5rem;
+  max-width: calc(43rem + var(--gutter) + 1.5rem); margin: 0; padding: 9rem 1.5rem 5.5rem var(--gutter);
   display: flex; justify-content: space-between; align-items: center; gap: 2rem;
   animation: rise .7s ease-out both;
 }
@@ -76,11 +77,11 @@ h1 {
 .band .links a:hover { background: var(--band-ink); color: var(--band-a); }
 .band a:focus-visible { outline-color: var(--ice); }
 
-/* Ice shelf schematic: small, top-left, aligned with the text column.
+/* Ice shelf schematic: small, top-left, aligned with the text.
    Put the <svg class="scene"> as a direct child of .band, outside .hero. */
 .scene {
   position: absolute; top: 3.25rem;
-  left: max(1.5rem, calc(50% - 21.5rem));
+  left: var(--gutter);
   width: 7.5rem; height: auto;
   opacity: .9; pointer-events: none;
 }
@@ -92,7 +93,7 @@ h1 {
 /* Section nav (sticky, scrolls to sections) */
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-main, footer { max-width: 46rem; margin: 0 auto; padding: 0 1.5rem; }
+main, footer { max-width: calc(43rem + var(--gutter) + 1.5rem); margin: 0; padding: 0 1.5rem 0 var(--gutter); }
 .tabs {
   position: sticky; top: 0; z-index: 5;
   display: flex; gap: 1.75rem; flex-wrap: wrap;
@@ -122,9 +123,9 @@ p { margin: 0 0 1.1rem; max-width: 38rem; }
 .org { display: block; color: var(--muted); }
 .row p { margin: .3rem 0 0; }
 
-footer { padding: 2rem 1.5rem 3rem; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
+footer { padding: 2rem 1.5rem 3rem var(--gutter); color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
 
 @media (max-width: 36rem) {
-  .hero { flex-direction: column-reverse; align-items: flex-start; padding: 8rem 1.5rem 4.5rem; }
+  .hero { flex-direction: column-reverse; align-items: flex-start; padding: 8rem 1.5rem 4.5rem var(--gutter); }
   .scene { width: 6rem; }
 }

@@ -17,7 +17,11 @@
   <svg class="scene" viewBox="0 0 240 150" aria-hidden="true">
     <path d="M0,14 C45,18 95,42 150,44 V74 C115,80 80,98 40,112 C28,118 15,126 0,130"/>
     <path d="M40,112 C100,112 160,110 200,104 S235,98 240,96"/>
-    <path d="M150,52 q7.5,-4 15,0 t15,0 t15,0 t15,0 t15,0 t15,0"/>
+    <mask id="behind-ice" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="150">
+      <rect width="240" height="150" style="fill:#fff;stroke:none"/>
+      <rect x="155" y="44" width="14" height="22" rx="2" style="fill:#000;stroke:none"/>
+    </mask>
+    <path mask="url(#behind-ice)" d="M150,52 q7.5,-4 15,0 t15,0 t15,0 t15,0 t15,0 t15,0"/>
     <path d="M186,52 H206 M212,52 H234"/>
     <rect x="155" y="44" width="14" height="22" rx="2"/>
   </svg>
