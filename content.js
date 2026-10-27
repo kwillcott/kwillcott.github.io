@@ -22,7 +22,7 @@ const SITE = {
 
   // Each line in this list becomes one paragraph.
   about: [
-    "I am a PhD candidate at UC Irvine, in the Ocean and Climate Dynamics group.",
+    "I am a PhD candidate at UC Irvine, in the [Ocean and Climate Dynamics group](https://faculty.sites.uci.edu/drakelab/), advised by Dr. Henri Drake."
     "I study how meltwater from ice shelves sea ice change the ocean's large-scale overturning circulation, using idealized models to understand the feedbacks between the Southern Ocean and the Atlantic."
   ],
 
