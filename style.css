@@ -1,27 +1,27 @@
 @charset "UTF-8";
-/* Palette: #606c38 olive, #283618 forest, #fefae0 cream, #dda15e tan, #bc6c25 copper */
+/* Palette: #0d1321 ink, #1d2d44 navy, #fefae0 cream, #dda15e tan, #bc6c25 copper */
 :root {
   --bg: #fefae0;
-  --ink: #283618;
-  --muted: #606c38;
+  --ink: #0d1321;
+  --muted: #4f6078;
   --line: #e8e1b8;
   --accent: #bc6c25;
-  --band-a: #283618;
-  --band-b: #606c38;
+  --band-a: #0d1321;
+  --band-b: #1d2d44;
   --band-ink: #fefae0;
-  --band-muted: #e9e4bd;
+  --band-muted: #c9d1dd;
   --ice: #dda15e;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #161d0d;
+    --bg: #0d1321;
     --ink: #fefae0;
-    --muted: #b3bc86;
-    --line: #35431f;
+    --muted: #9fadc2;
+    --line: #24344c;
     --accent: #dda15e;
-    --band-a: #1d2811;
-    --band-b: #4a5629;
+    --band-a: #080c16;
+    --band-b: #1d2d44;
     color-scheme: dark;
   }
 }
