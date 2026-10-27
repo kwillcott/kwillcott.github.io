@@ -9,7 +9,7 @@ A simple static site. No build tools, nothing to install.
 | `content.js` | All your text and links | **Yes, this is the one** |
 | `index.html` | Page structure | Rarely |
 | `style.css` | Colors, fonts, spacing | Only to change the look |
-| `cv.pdf` | Your CV (add this yourself) | Replace it when you update your CV |
+| `CV.pdf` | Your CV (add this yourself) | Replace it when you update your CV |
 
 ## Publish it (one time)
 
