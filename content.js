@@ -22,8 +22,8 @@ const SITE = {
 
   // Each line in this list becomes one paragraph.
   about: [
-    "I study how melting ice and shrinking sea ice change the ocean's large-scale overturning circulation, using idealized models to understand the feedbacks between the Southern Ocean and the Atlantic.",
-    "I'm a PhD candidate at UC Irvine, advised by Henri Drake. Add a sentence or two here about what you're working toward and what you enjoy outside research."
+    "I am a PhD candidate at UC Irvine, in the Ocean and Climate Dynamics group.",
+    "I study how meltwater from ice shelves sea ice change the ocean's large-scale overturning circulation, using idealized models to understand the feedbacks between the Southern Ocean and the Atlantic."
   ],
 
   research: [
