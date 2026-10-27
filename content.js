@@ -34,12 +34,12 @@ const SITE = {
   ],
 
   experience: [
-    { role: "PhD Candidate, Earth System Science", org: "University of California, Irvine", dates: "2024 – present", text: "" },
-    { role: "Add a role, internship or research position", org: "Institution", dates: "20XX – 20XX", text: "One line on what you did." }
+    { role: "PhD Candidate, Earth System Science", org: "University of California, Irvine", dates: "2024 – present", text: "" }
   ],
 
   education: [
-    { role: "PhD, Earth System Science", org: "University of California, Irvine", dates: "20XX – present", text: "" },
-    { role: "Previous degree", org: "University", dates: "20XX", text: "" }
+    { role: "PhD, Earth System Science", org: "University of California, Irvine", dates: "2024 – present", text: "" },
+    { role: "MSc, Mathematics", org: "University of British Columbia", dates: "2018-2020", text: "" },
+    { role: "BSc, Mathematics Honors, Economics", org: "University of British Columbia", dates: "2012-2017", text: "" }
   ]
 };
