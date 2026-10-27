@@ -16,7 +16,7 @@ const SITE = {
     linkedin: "https://www.linkedin.com/in/kim-willcott-9292b8207",   // e.g. "www.linkedin.com/in/you"
     orcid: "https://orcid.org/0009-0006-6736-1697",      // e.g. "orcid.org/0000-0000-0000-0000"
     scholar: "",    // Google Scholar profile URL
-    cv: "CV.pdf",   // put your CV file next to index.html with this name
+    cv: "cv.pdf",   // put your CV file next to index.html with this name
     email: "kwillcot@uci.edu"       // e.g. "you@uci.edu"
   },
 
