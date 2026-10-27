@@ -29,7 +29,7 @@ const SITE = {
   research: [
     {
       title: "Coupled ice-ocean feedbacks and the overturning circulations",
-      text: "My dissertation looks at how ice shelf and sea ice loss affect the Southern and Atlantic Meridional Overturning Circulations (SMOC and AMOC), and how the two circulations influence each other."
+      text: "My dissertation looks at how ice shelf and sea ice loss affect the Southern and Atlantic Meridional Overturning Circulations (SMOC and AMOC), and how the two circulations influence each other. My box model uses a combination of surface water mass transformations, diffusive upwelling, and advective transports to represent the overtruning circulaiton."
     }
   ],
 
