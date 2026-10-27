@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name</title>
+  <title>Kim Willcott</title>
   <meta name="description" content="Academic homepage">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,15 +24,10 @@
 
   <div class="hero">
     <div>
-      <h1>Your Name</h1>
-      <p class="role">Your role</p>
-      <p class="affil">Your department, university</p>
-      <p class="links">
-        <a href="mailto:you@example.edu">Email</a>
-        <a href="#">CV</a>
-        <a href="#">Google Scholar</a>
-        <a href="https://github.com/kwillcott">GitHub</a>
-      </p>
+      <h1></h1>
+      <p class="role"></p>
+      <p class="affil"></p>
+      <p class="links"></p>
     </div>
   </div>
 
@@ -50,60 +45,100 @@
     <a href="#education">Education</a>
   </nav>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>A short paragraph about who you are and what you work on.</p>
-  </section>
-
-  <section id="research">
-    <h2>Research</h2>
-    <div class="item">
-      <h3>Project or paper title</h3>
-      <p>One or two sentences describing it.</p>
-    </div>
-    <div class="item">
-      <h3>Another project</h3>
-      <p>One or two sentences describing it.</p>
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="timeline">
-      <div class="row">
-        <span class="dates">2024 – present</span>
-        <strong>Position</strong>
-        <span class="org">Organization</span>
-        <p>What you did there.</p>
-      </div>
-      <div class="row">
-        <span class="dates">2022 – 2024</span>
-        <strong>Position</strong>
-        <span class="org">Organization</span>
-        <p>What you did there.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <div class="timeline">
-      <div class="row">
-        <span class="dates">2020 – 2024</span>
-        <strong>Degree</strong>
-        <span class="org">University</span>
-      </div>
-    </div>
-  </section>
+  <section id="about"><h2>About</h2></section>
+  <section id="research"><h2>Research</h2></section>
+  <section id="experience"><h2>Experience</h2></section>
+  <section id="education"><h2>Education</h2></section>
 </main>
 
-<footer>© Your Name</footer>
+<footer></footer>
 
+<!-- All of the page's text lives in content.js (defines SITE) -->
 <script src="content.js"></script>
 <script>
-  // Highlight the nav link for the section currently in view
+(function () {
+  const $ = (s) => document.querySelector(s);
+  const el = (tag, cls, text) => {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text) n.textContent = text;
+    return n;
+  };
+
+  /* ---------- Header ---------- */
+  document.title = SITE.name;
+  $('h1').textContent = SITE.name;
+  $('.role').textContent = SITE.title || '';
+  $('.affil').textContent = SITE.affiliation || '';
+  if (!SITE.title) $('.role').hidden = true;
+  if (!SITE.affiliation) $('.affil').hidden = true;
+
+  const L = SITE.links || {};
+  const linkDefs = [
+    ['email', 'Email', v => 'mailto:' + v],
+    ['cv', 'CV'],
+    ['scholar', 'Google Scholar'],
+    ['orcid', 'ORCID'],
+    ['linkedin', 'LinkedIn'],
+    ['github', 'GitHub']
+  ];
+  const linkBox = $('.links');
+  linkDefs.forEach(([key, label, fmt]) => {
+    const v = L[key];
+    if (!v) return;
+    const a = el('a', '', label);
+    a.href = fmt ? fmt(v) : v;
+    if (/^https?:/.test(v)) { a.target = '_blank'; a.rel = 'noopener'; }
+    linkBox.append(a);
+  });
+  if (!linkBox.children.length) linkBox.hidden = true;
+
+  /* ---------- Sections (empty ones are removed, along with their nav link) ---------- */
+  function fill(id, items, build) {
+    const sec = document.getElementById(id);
+    const list = (items || []).filter(Boolean);
+    if (!list.length) {
+      sec.remove();
+      const link = document.querySelector('.tabs a[href="#' + id + '"]');
+      if (link) link.remove();
+      return;
+    }
+    build(sec, list);
+  }
+
+  const timeline = (sec, items) => {
+    const t = el('div', 'timeline');
+    items.forEach(r => {
+      const row = el('div', 'row');
+      if (r.dates) row.append(el('span', 'dates', r.dates));
+      row.append(el('strong', '', r.role || ''));
+      if (r.org) row.append(el('span', 'org', r.org));
+      if (r.text) row.append(el('p', '', r.text));
+      t.append(row);
+    });
+    sec.append(t);
+  };
+
+  fill('about', SITE.about, (sec, items) =>
+    items.forEach(t => sec.append(el('p', '', t))));
+
+  fill('research', SITE.research, (sec, items) =>
+    items.forEach(r => {
+      const d = el('div', 'item');
+      d.append(el('h3', '', r.title || ''));
+      if (r.text) d.append(el('p', '', r.text));
+      sec.append(d);
+    }));
+
+  fill('experience', SITE.experience, timeline);
+  fill('education', SITE.education, timeline);
+
+  $('footer').textContent = '\u00A9 ' + SITE.name;
+
+  /* ---------- Highlight the nav link for the section in view ---------- */
   const links = [...document.querySelectorAll('.tabs a')];
   const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+  if (links[0]) links[0].setAttribute('aria-current', 'page');
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
@@ -112,6 +147,7 @@
     });
   }, { rootMargin: '-30% 0px -60% 0px' });
   sections.forEach(s => s && io.observe(s));
+})();
 </script>
 </body>
 </html>
