@@ -15,7 +15,7 @@ const SITE = {
 
   // Each line in this list becomes one paragraph.
   about: [
-    "I am a PhD candidate at UC Irvine, in the [Ocean and Climate Dynamics group](https://faculty.sites.uci.edu/drakelab/), advised by Dr. Henri Drake. I am interested in how meltwater from ice shelves and sea ice change the ocean's large-scale overturning circulation. I use idealized models to study these meltwater inputs, the Southern Meridional Overturning Circulation (SMOC), and the Atlantic Meridional Overtunring Circulation (AMOC) as a coupled system.",
+    "I am a PhD candidate at UC Irvine, in the [Ocean and Climate Dynamics group](https://faculty.sites.uci.edu/drakelab/), advised by Dr. Henri Drake. I am interested in how meltwater from ice shelves and sea ice change the ocean's large-scale overturning circulation, and how changes in the circulation feeds back onto ice melt.",
     "Prior to my PhD, I received a B.Sc. in Mathematics (honours) and Economics, followed by an M.Sc. in Mathematics, both from the University of British Columbia.",
     "Outside of my research, I enjoy climbing, hiking, baking, and trying new coffees!"
   ],
@@ -23,13 +23,13 @@ const SITE = {
   research: [
     {
       title: "Coupled ice-ocean feedbacks and the overturning circulations",
-      text: "My dissertation looks at how ice shelf and sea ice loss affect the Southern and Atlantic Meridional Overturning Circulations (SMOC and AMOC), and how the two circulations influence each other. My box model uses a combination of surface water mass transformations, diffusive upwelling, and advective transports to represent the overtruning circulaiton."
+      text: "My dissertation looks at how ice shelf and sea ice loss affect the Southern and Atlantic Meridional Overturning Circulations (SMOC and AMOC), and how the two circulations influence each other. I use an idealized model, consisting of a combination of surface water mass transformations, diffusive upwelling, and advective transports to represent the overtruning circulation."
     }
   ],
 
-  experience: [
-    { role: "PhD Candidate, Earth System Science", org: "University of California, Irvine", dates: "2024 – present", text: "" }
-  ],
+  //experience: [
+  //  { role: "PhD Candidate, Earth System Science", org: "University of California, Irvine", dates: "2024 – present", text: "" }
+  //],
 
   education: [
     { role: "PhD, Earth System Science", org: "University of California, Irvine", dates: "2024 – present", text: "" },
