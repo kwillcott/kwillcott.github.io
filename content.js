@@ -1,10 +1,3 @@
-// ============================================================
-//  EDIT THIS FILE to update your website. Save it and the site
-//  updates in about a minute. You never need to touch index.html.
-//  Anything left as "" is simply hidden on the page.
-//  Keep the quotes and commas as they are.
-// ============================================================
-
 const SITE = {
   name: "Kim Willcott",
   title: "PhD Candidate, Earth System Science",
@@ -22,7 +15,8 @@ const SITE = {
 
   // Each line in this list becomes one paragraph.
   about: [
-    "I am a PhD candidate at UC Irvine, in the [Ocean and Climate Dynamics group](https://faculty.sites.uci.edu/drakelab/), advised by Dr. Henri Drake. I study how meltwater from ice shelves and sea ice change the ocean's large-scale overturning circulation, using box models to understand the feedbacks between the Southern Ocean and the Atlantic.",
+    "I am a PhD candidate at UC Irvine, in the [Ocean and Climate Dynamics group](https://faculty.sites.uci.edu/drakelab/), advised by Dr. Henri Drake. I am interested in how meltwater from ice shelves and sea ice change the ocean's large-scale overturning circulation. I use idealized models to study these meltwater inputs, the Southern Meridional Overturning Circulation (SMOC), and the Atlantic Meridional Overtunring Circulation (AMOC) as a coupled system.",
+    "Prior to my PhD, I received a B.Sc. in Mathematics (honours) and Economics, followed by an M.Sc. in Mathematics, both from the University of British Columbia.",
     "Outside of my research, I enjoy climbing, hiking, baking, and trying new coffees!"
   ],
 
