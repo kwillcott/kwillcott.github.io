@@ -14,18 +14,7 @@
   --gutter: clamp(1.5rem, 6vw, 5rem);   /* left margin shared by header, nav, content, footer */
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0d1321;
-    --ink: #FCFBF4;
-    --muted: #9fadc2;
-    --line: #24344c;
-    --accent: #dda15e;
-    --band-a: #080c16;
-    --band-b: #1d2d44;
-    color-scheme: dark;
-  }
-}
+
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--bg); color: var(--ink);
