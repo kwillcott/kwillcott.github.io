@@ -133,14 +133,15 @@ footer { padding: 2rem 1.5rem 3rem var(--gutter); color: var(--muted); font-size
 /* Tabs: only the selected section shows */
 section[hidden] { display: none; }
 
-/* About page: text with a circular photo beside it */
+/* About page: photo on the left, text beside it */
 .about-layout { display: flex; align-items: flex-start; gap: 2.5rem; }
 .about-text { flex: 1; min-width: 0; }
-.portrait {
-  flex: none; width: 11rem; height: 11rem;
-  border-radius: 50%; object-fit: cover;
+.about-layout .portrait {
+  flex: none; width: 12rem; max-width: 40%;
+  aspect-ratio: 4 / 5; height: auto;
+  object-fit: cover; border-radius: 6px;
 }
 @media (max-width: 36rem) {
-  .about-layout { flex-direction: column-reverse; }
-  .portrait { width: 8rem; height: 8rem; }
+  .about-layout { flex-direction: column; }
+  .about-layout .portrait { width: 10rem; max-width: 100%; }
 }
