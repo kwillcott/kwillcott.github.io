@@ -116,7 +116,7 @@
   });
   if (!linkBox.children.length) linkBox.hidden = true;
 
-  /* ---------- Sections (empty ones are removed, along with their nav link) ---------- */
+  /* ---------- Sections (empty ones are removed, along with their tab) ---------- */
   function fill(id, items, build) {
     const sec = document.getElementById(id);
     const list = (items || []).filter(Boolean);
@@ -142,8 +142,20 @@
     sec.append(t);
   };
 
-  fill('about', SITE.about, (sec, items) =>
-    items.forEach(t => sec.append(el('p', '', t))));
+  // About: text on the left, optional circular photo beside it (set `photo` in content.js)
+  fill('about', SITE.about, (sec, items) => {
+    const wrap = el('div', 'about-layout');
+    const text = el('div', 'about-text');
+    items.forEach(t => text.append(el('p', '', t)));
+    wrap.append(text);
+    if (SITE.photo) {
+      const img = el('img', 'portrait');
+      img.src = SITE.photo;
+      img.alt = SITE.name;
+      wrap.append(img);
+    }
+    sec.append(wrap);
+  });
 
   fill('research', SITE.research, (sec, items) =>
     items.forEach(r => {
@@ -158,18 +170,20 @@
 
   $('footer').textContent = '\u00A9 ' + SITE.name;
 
-  /* ---------- Highlight the nav link for the section in view ---------- */
+  /* ---------- Tabs: show one section at a time, chosen by the URL (#about, #research, ...) ---------- */
   const links = [...document.querySelectorAll('.tabs a')];
-  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
-  if (links[0]) links[0].setAttribute('aria-current', 'page');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      links.forEach(l => l.removeAttribute('aria-current'));
-      links[sections.indexOf(e.target)].setAttribute('aria-current', 'page');
+  const panels = links.map(a => document.querySelector(a.getAttribute('href')));
+  function showTab() {
+    let id = location.hash.slice(1);
+    if (!panels.some(p => p && p.id === id)) id = panels[0] ? panels[0].id : '';
+    panels.forEach(p => { if (p) p.hidden = p.id !== id; });
+    links.forEach(l => {
+      if (l.getAttribute('href') === '#' + id) l.setAttribute('aria-current', 'page');
+      else l.removeAttribute('aria-current');
     });
-  }, { rootMargin: '-30% 0px -60% 0px' });
-  sections.forEach(s => s && io.observe(s));
+  }
+  window.addEventListener('hashchange', () => { showTab(); window.scrollTo(0, 0); });
+  showTab();
 })();
 </script>
 </body>
