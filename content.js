@@ -2,6 +2,7 @@ const SITE = {
   name: "Kim Willcott",
   title: "PhD Candidate, Earth System Science",
   affiliation: "University of California, Irvine",
+  photo: "headshot.jpg",
 
   // Leave one as "" to hide it.
   links: {
