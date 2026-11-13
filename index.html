@@ -141,21 +141,22 @@
     });
     sec.append(t);
   };
-
+  
   // About: text on the left, optional circular photo beside it (set `photo` in content.js)
-  fill('about', SITE.about, (sec, items) => {
+    fill('about', SITE.about, (sec, items) => {
     const wrap = el('div', 'about-layout');
-    const text = el('div', 'about-text');
-    items.forEach(t => text.append(el('p', '', t)));
-    wrap.append(text);
     if (SITE.photo) {
       const img = el('img', 'portrait');
       img.src = SITE.photo;
       img.alt = SITE.name;
       wrap.append(img);
     }
+    const text = el('div', 'about-text');
+    items.forEach(t => text.append(el('p', '', t)));
+    wrap.append(text);
     sec.append(wrap);
   });
+  
 
   fill('research', SITE.research, (sec, items) =>
     items.forEach(r => {
