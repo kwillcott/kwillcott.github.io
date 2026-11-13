@@ -16,7 +16,6 @@ const SITE = {
   // Each line in this list becomes one paragraph.
   about: [
     "I am a PhD candidate at UC Irvine, in the [Ocean and Climate Dynamics group](https://faculty.sites.uci.edu/drakelab/), advised by Dr. Henri Drake. I am interested in how meltwater from ice shelves and sea ice change the ocean's large-scale overturning circulation, and how changes in the circulation feed back onto ice melt.",
-    "Prior to my PhD, I received a B.Sc. in Mathematics (Honours) and Economics, followed by an M.Sc. in Mathematics, both from the University of British Columbia.",
     "Outside of my research, I enjoy climbing, hiking, baking, and trying new coffees!"
   ],
 
