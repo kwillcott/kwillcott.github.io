@@ -33,7 +33,7 @@ const SITE = {
 
   education: [
     { role: "PhD, Earth System Science", org: "University of California, Irvine", dates: "2024 – present", text: "" },
-    { role: "M.Sc., Mathematics", org: "University of British Columbia", dates: "2018 – 2020", text: "" },
-    { role: "B.Sc., Mathematics (Honours) and Economics", org: "University of British Columbia", dates: "2012 – 2017", text: "" }
+    { role: "MSc, Mathematics", org: "University of British Columbia", dates: "2018 – 2020", text: "" },
+    { role: "BSc, Mathematics (Honours) and Economics", org: "University of British Columbia", dates: "2012 – 2017", text: "" }
   ]
 };
